@@ -3,44 +3,6 @@ namespace myImages {
 
     helpers._registerFactory("image", function(name: string) {
         switch(helpers.stringTrim(name)) {
-            case "image1":
-            case "nena-front":return img`
-. f f f . f f f f . f f f . 
-f f f f f c c c c f f f f f 
-f f f f b c c c c b f f f f 
-f f f c 3 c c c c 3 c f f f 
-. f 3 3 c c c c c c 3 3 f . 
-. f c c c c 4 4 c c c c f . 
-. f f c c 4 4 4 4 c c f f . 
-. f f f b f 4 4 f b f f f . 
-. f f 4 1 f d d f 1 4 f f . 
-. . f f d d d d d d f f . . 
-. . e f e 4 4 4 4 e f e . . 
-. e 4 f b 3 3 3 3 b f 4 e . 
-. 4 d f 3 3 3 3 3 3 c d 4 . 
-. 4 4 f 6 6 6 6 6 6 f 4 4 . 
-. . . . f f f f f f . . . . 
-. . . . f f . . f f . . . . 
-`;
-            case "image2":
-            case "pollo":return img`
-. . . . . . . . b 2 2 2 b . . . 
-. . . . . . b b 2 2 2 b . . . . 
-. . . . . b b 1 2 2 2 1 b . . . 
-. b b b b b 1 1 1 1 1 1 1 b . . 
-. b d 1 b 1 1 1 1 1 1 1 1 b . . 
-. . b 1 1 b 1 d b f 1 b 4 f . . 
-. . b d 1 1 b b f f 1 4 4 c . . 
-b b d b 1 1 1 d f b 4 4 4 4 b . 
-b d d c d 1 1 b 1 4 4 4 4 4 4 b 
-c d d d c c b 1 1 1 1 1 1 1 b . 
-c b d d d d d 1 1 1 1 1 1 1 b . 
-. c d d d d d d 1 1 1 1 1 d b . 
-. . c b d d d d d 1 1 1 b b . . 
-. . . c c c c c c c c b b . . . 
-. . . . c 5 c . . c 5 b . . . . 
-. . . c 5 5 5 c c 5 5 5 b . . . 
-`;
             case "image3":
             case "duck4":return img`
 . . . . . . . . . b 2 2 b . . . 
@@ -59,80 +21,6 @@ c b b d 1 d c d 1 1 1 1 1 1 b .
 . b 1 1 b c d d 1 1 1 1 1 d b . 
 b b c c c d d d d 1 1 1 b b . . 
 . . . c c c c c c c c b b . . . 
-`;
-            case "image4":
-            case "patata":return img`
-. . . . b 4 4 4 4 4 b b . . . . 
-. . . b 4 4 4 4 4 4 4 4 b . . . 
-. . b 4 1 4 1 1 1 4 4 4 4 b . . 
-. b 4 4 4 4 1 1 4 4 1 1 4 4 b . 
-. b d 4 4 4 4 4 4 4 4 1 1 4 4 b 
-b 4 4 4 4 4 4 4 4 4 4 4 1 4 4 b 
-c d 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-c d 4 4 4 4 4 4 4 4 4 4 4 1 4 4 
-c 4 4 4 4 d 4 4 4 4 4 4 4 4 4 4 
-c 4 d 4 4 4 d 4 4 4 4 4 4 4 4 4 
-. c 4 4 4 4 4 d d d 4 4 4 4 4 b 
-. c 4 d 4 4 4 d 4 4 d 4 4 4 4 c 
-. . c 4 4 d 4 4 4 4 4 d d 4 d c 
-. . . c 4 4 4 4 4 4 4 4 4 4 4 b 
-. . . . c c b 4 4 4 b b 4 4 b . 
-. . . . . . c c c c c c b b . . 
-`;
-            case "image5":
-            case "cabra":return img`
-f 4 f . . . . f 4 f . . . . 
-f 4 4 f . . f 4 4 f . . . . 
-f 4 4 f . . f 4 4 f . . . . 
-. f 4 4 f f 4 4 f . . . . . 
-. f e e e e e e f . . . . . 
-f e e e e e e e e f . . . . 
-e e f e e e e f e e . . . . 
-f e d f e e f d e f . . . . 
-f b 1 1 b b 1 1 2 f . f f f 
-. f 2 2 2 2 2 2 b b f f e f 
-. f b e e e e e e b b d b f 
-. f e e e e e b e e f f f . 
-. f c f f f c f f c f . . . 
-. f f . . f f . c f f . . . 
-`;
-            case "image6":
-            case "egg":return img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . b b b b . . . . . . 
-. . . . b b 4 4 4 4 b b . . . . 
-. . . . b 4 4 b 4 4 4 b . . . . 
-. . . b 4 4 b b 4 4 4 4 b . . . 
-. . . b 4 4 4 4 4 4 4 4 b . . . 
-. . b 4 4 4 4 4 4 b 4 b 4 b . . 
-. . b 4 4 4 4 b b b 4 4 4 b . . 
-. . b b 4 4 4 b b 4 4 4 4 b . . 
-. . c b b 4 4 4 4 4 4 b 4 c . . 
-. . c 4 4 4 4 4 4 4 4 b 4 c . . 
-. . c b 4 4 b b 4 4 4 4 b c . . 
-. . . c 4 4 b b 4 4 4 4 c . . . 
-. . . . c b 4 4 4 4 b c . . . . 
-. . . . . c c c c c c . . . . . 
-`;
-            case "image7":
-            case "caballo":return img`
-. . . . . . . . . . . . . . . . 
-. . . . . f . . . . . . . . . . 
-. f f f f e f . . . . . . . . . 
-f e e e e f . . . . . . . . . . 
-e e f 1 e f . . . . . . . . . . 
-e e e e e f . . . . . . . . . . 
-f f f e e f . . . . . . . . . . 
-. . f e e e f f f f f f . . . . 
-. . . f e e 4 4 4 4 4 e f . . . 
-. . . f e e 4 4 4 4 4 e e f . . 
-. . . f e e e 4 4 4 e e f 4 f . 
-. . . f e e e e e e e e f 4 4 f 
-. . . f e e f f f f e e f f 4 f 
-. . . f e e f . . f e e f . f . 
-. . . f e e f . . f e e f . . . 
-. . . . f f . . . . f f . . . . 
 `;
             case "image8":
             case "snowynight":return img`
@@ -406,6 +294,137 @@ cc7777777777776c
 ......eeee......
 .....eeeeee.....
 .......ee.......
+`;
+            case "image1":
+            case "vendedor-front":return img`
+. f f f . f f f f . f f f . 
+f f f f f c c c c f f f f f 
+f f f f b c c c c b f f f f 
+f f f c 3 c c c c 3 c f f f 
+. f 3 3 c c c c c c 3 3 f . 
+. f c c c c 4 4 c c c c f . 
+. f f c c 4 4 4 4 c c f f . 
+. f f f b f 4 4 f b f f f . 
+. f f 4 1 f d d f 1 4 f f . 
+. . f f d d d d d d f f . . 
+. . e f e 4 4 4 4 e f e . . 
+. e 4 f b 3 3 3 3 b f 4 e . 
+. 4 d f 3 3 3 3 3 3 c d 4 . 
+. 4 4 f 6 6 6 6 6 6 f 4 4 . 
+. . . . f f f f f f . . . . 
+. . . . f f . . f f . . . . 
+`;
+            case "image11":
+            case "vendedora":return img`
+. . . . f f f f f f . . . . . . 
+. . . f 2 f e e e e f f . . . . 
+. . f 2 2 2 f e e e e f f . . . 
+. . f e e e e f f e e e f . . . 
+. f e 2 2 2 2 e e f f f f . . . 
+. f 2 e f f f f 2 2 2 e f . . . 
+. f f f e e e f f f f f f f . . 
+. f e e 4 4 f b e 4 4 e f f . . 
+. . f e d d f 1 4 d 4 e e f . . 
+. . . f d d d d 4 e e e f . . . 
+. . . f e 4 4 4 e e f f . . . . 
+. . . f 2 2 2 e d d 4 . . . . . 
+. . . f 2 2 2 e d d e . . . . . 
+. . . f 5 5 4 f e e f . . . . . 
+. . . . f f f f f f . . . . . . 
+. . . . . . f f f . . . . . . . 
+`;
+            case "image2":
+            case "pollo":return img`
+. . . . . . . . b 2 2 2 b . . . 
+. . . . . . b b 2 2 2 b . . . . 
+. . . . . b b 1 2 2 2 1 b . . . 
+. b b b b b 1 1 1 1 1 1 1 b . . 
+. b d 1 b 1 1 1 1 1 1 1 1 b . . 
+. . b 1 1 b 1 d b f 1 b 4 f . . 
+. . b d 1 1 b b f f 1 4 4 c . . 
+b b d b 1 1 1 d f b 4 4 4 4 b . 
+b d d c d 1 1 b 1 4 4 4 4 4 4 b 
+c d d d c c b 1 1 1 1 1 1 1 b . 
+c b d d d d d 1 1 1 1 1 1 1 b . 
+. c d d d d d d 1 1 1 1 1 d b . 
+. . c b d d d d d 1 1 1 b b . . 
+. . . c c c c c c c c b b . . . 
+. . . . c 5 c . . c 5 b . . . . 
+. . . c 5 5 5 c c 5 5 5 b . . . 
+`;
+            case "image4":
+            case "patata":return img`
+. . . . b 4 4 4 4 4 b b . . . . 
+. . . b 4 4 4 4 4 4 4 4 b . . . 
+. . b 4 1 4 1 1 1 4 4 4 4 b . . 
+. b 4 4 4 4 1 1 4 4 1 1 4 4 b . 
+. b d 4 4 4 4 4 4 4 4 1 1 4 4 b 
+b 4 4 4 4 4 4 4 4 4 4 4 1 4 4 b 
+c d 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+c d 4 4 4 4 4 4 4 4 4 4 4 1 4 4 
+c 4 4 4 4 d 4 4 4 4 4 4 4 4 4 4 
+c 4 d 4 4 4 d 4 4 4 4 4 4 4 4 4 
+. c 4 4 4 4 4 d d d 4 4 4 4 4 b 
+. c 4 d 4 4 4 d 4 4 d 4 4 4 4 c 
+. . c 4 4 d 4 4 4 4 4 d d 4 d c 
+. . . c 4 4 4 4 4 4 4 4 4 4 4 b 
+. . . . c c b 4 4 4 b b 4 4 b . 
+. . . . . . c c c c c c b b . . 
+`;
+            case "image5":
+            case "cabra":return img`
+f 4 f . . . . f 4 f . . . . 
+f 4 4 f . . f 4 4 f . . . . 
+f 4 4 f . . f 4 4 f . . . . 
+. f 4 4 f f 4 4 f . . . . . 
+. f e e e e e e f . . . . . 
+f e e e e e e e e f . . . . 
+e e f e e e e f e e . . . . 
+f e d f e e f d e f . . . . 
+f b 1 1 b b 1 1 2 f . f f f 
+. f 2 2 2 2 2 2 b b f f e f 
+. f b e e e e e e b b d b f 
+. f e e e e e b e e f f f . 
+. f c f f f c f f c f . . . 
+. f f . . f f . c f f . . . 
+`;
+            case "image6":
+            case "egg":return img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . b b b b . . . . . . 
+. . . . b b 4 4 4 4 b b . . . . 
+. . . . b 4 4 b 4 4 4 b . . . . 
+. . . b 4 4 b b 4 4 4 4 b . . . 
+. . . b 4 4 4 4 4 4 4 4 b . . . 
+. . b 4 4 4 4 4 4 b 4 b 4 b . . 
+. . b 4 4 4 4 b b b 4 4 4 b . . 
+. . b b 4 4 4 b b 4 4 4 4 b . . 
+. . c b b 4 4 4 4 4 4 b 4 c . . 
+. . c 4 4 4 4 4 4 4 4 b 4 c . . 
+. . c b 4 4 b b 4 4 4 4 b c . . 
+. . . c 4 4 b b 4 4 4 4 c . . . 
+. . . . c b 4 4 4 4 b c . . . . 
+. . . . . c c c c c c . . . . . 
+`;
+            case "image7":
+            case "caballo":return img`
+. . . . . . . . . . . . . . . . 
+. . . . . f . . . . . . . . . . 
+. f f f f e f . . . . . . . . . 
+f e e e e f . . . . . . . . . . 
+e e f 1 e f . . . . . . . . . . 
+e e e e e f . . . . . . . . . . 
+f f f e e f . . . . . . . . . . 
+. . f e e e f f f f f f . . . . 
+. . . f e e 4 4 4 4 4 e f . . . 
+. . . f e e 4 4 4 4 4 e e f . . 
+. . . f e e e 4 4 4 e e f 4 f . 
+. . . f e e e e e e e e f 4 4 f 
+. . . f e e f f f f e e f f 4 f 
+. . . f e e f . . f e e f . f . 
+. . . f e e f . . f e e f . . . 
+. . . . f f . . . . f f . . . . 
 `;
         }
         return null;

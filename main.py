@@ -1,7 +1,11 @@
 @namespace
 class SpriteKind:
     Arbol = SpriteKind.create()
-    Comerciante = SpriteKind.create()
+    Gallina = SpriteKind.create()
+    Patata = SpriteKind.create()
+    Cabra = SpriteKind.create()
+    Huevo = SpriteKind.create()
+    Caballo = SpriteKind.create()
 # Variables globales
 
 def on_down_pressed():
@@ -60,6 +64,38 @@ def on_up_pressed():
         False)
 controller.up.on_event(ControllerButtonEvent.PRESSED, on_up_pressed)
 
+def crear_mercado():
+    global gallina, patata, cabra, huevo, caballo
+    # 1. Vendedor GALLINA
+    gallina = sprites.create(assets.image("""
+        pollo
+        """), SpriteKind.Gallina)
+    gallina.set_position(113, 73)
+    gallina.set_flag(SpriteFlag.GHOST, True)
+    # 2. Vendedor PATATA
+    patata = sprites.create(assets.image("""
+        patata
+        """), SpriteKind.Patata)
+    patata.set_position(106, 96)
+    patata.set_flag(SpriteFlag.GHOST, True)
+    # 3. Vendedor CABRA
+    cabra = sprites.create(assets.image("""
+        cabra
+        """), SpriteKind.Cabra)
+    cabra.set_position(140, 60)
+    cabra.set_flag(SpriteFlag.GHOST, True)
+    # 4. Vendedor HUEVOS
+    huevo = sprites.create(assets.image("""
+        egg
+        """), SpriteKind.Huevo)
+    huevo.set_position(140, 80)
+    huevo.set_flag(SpriteFlag.GHOST, True)
+    # 5. Vendedor CABALLO
+    caballo = sprites.create(assets.image("""
+        caballo
+        """), SpriteKind.Caballo)
+    caballo.set_position(140, 100)
+    caballo.set_flag(SpriteFlag.GHOST, True)
 def crear_arbol_aleatorio():
     global arbol
     arbol = sprites.create(assets.image("""
@@ -68,15 +104,23 @@ def crear_arbol_aleatorio():
         SpriteKind.Arbol)
     arbol.set_position(randint(10, 60), randint(40, 110))
 arbol: Sprite = None
+caballo: Sprite = None
+huevo: Sprite = None
+cabra: Sprite = None
+patata: Sprite = None
+gallina: Sprite = None
 lenya_inventario = 0
 nena: Sprite = None
+eleccion = 0
 scene.set_background_image(assets.image("""
     fondo
     """))
 nena = sprites.create(assets.image("""
-    nena-front
-    """), SpriteKind.player)
+        vendedor-front
+        """),
+    SpriteKind.player)
 controller.move_sprite(nena)
-for arbol2 in range(6):
+crear_mercado()
+for index in range(6):
     # Crear el primer árbol al iniciar
     crear_arbol_aleatorio()

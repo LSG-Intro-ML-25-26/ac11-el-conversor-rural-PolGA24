@@ -1,6 +1,10 @@
 namespace SpriteKind {
     export const Arbol = SpriteKind.create()
-    export const Comerciante = SpriteKind.create()
+    export const Gallina = SpriteKind.create()
+    export const Patata = SpriteKind.create()
+    export const Cabra = SpriteKind.create()
+    export const Huevo = SpriteKind.create()
+    export const Caballo = SpriteKind.create()
 }
 
 //  Variables globales
@@ -40,6 +44,40 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function on_up_pressed() {
             nena-animation-up
             `, 500, false)
 })
+function crear_mercado() {
+    
+    //  1. Vendedor GALLINA
+    gallina = sprites.create(assets.image`
+        pollo
+        `, SpriteKind.Gallina)
+    gallina.setPosition(113, 73)
+    gallina.setFlag(SpriteFlag.Ghost, true)
+    //  2. Vendedor PATATA
+    patata = sprites.create(assets.image`
+        patata
+        `, SpriteKind.Patata)
+    patata.setPosition(106, 96)
+    patata.setFlag(SpriteFlag.Ghost, true)
+    //  3. Vendedor CABRA
+    cabra = sprites.create(assets.image`
+        cabra
+        `, SpriteKind.Cabra)
+    cabra.setPosition(140, 60)
+    cabra.setFlag(SpriteFlag.Ghost, true)
+    //  4. Vendedor HUEVOS
+    huevo = sprites.create(assets.image`
+        egg
+        `, SpriteKind.Huevo)
+    huevo.setPosition(140, 80)
+    huevo.setFlag(SpriteFlag.Ghost, true)
+    //  5. Vendedor CABALLO
+    caballo = sprites.create(assets.image`
+        caballo
+        `, SpriteKind.Caballo)
+    caballo.setPosition(140, 100)
+    caballo.setFlag(SpriteFlag.Ghost, true)
+}
+
 function crear_arbol_aleatorio() {
     
     arbol = sprites.create(assets.image`
@@ -49,16 +87,23 @@ function crear_arbol_aleatorio() {
 }
 
 let arbol : Sprite = null
+let caballo : Sprite = null
+let huevo : Sprite = null
+let cabra : Sprite = null
+let patata : Sprite = null
+let gallina : Sprite = null
 let lenya_inventario = 0
 let nena : Sprite = null
+let eleccion = 0
 scene.setBackgroundImage(assets.image`
     fondo
     `)
 nena = sprites.create(assets.image`
-    nena-front
-    `, SpriteKind.Player)
+        vendedor-front
+        `, SpriteKind.Player)
 controller.moveSprite(nena)
-for (let arbol2 = 0; arbol2 < 6; arbol2++) {
+crear_mercado()
+for (let index = 0; index < 6; index++) {
     //  Crear el primer árbol al iniciar
     crear_arbol_aleatorio()
 }
