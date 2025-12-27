@@ -45,7 +45,7 @@ function crear_arbol_aleatorio() {
     arbol = sprites.create(assets.image`
             treeSmallPine
             `, SpriteKind.Arbol)
-    arbol.setPosition(randint(10, 70), randint(20, 100))
+    arbol.setPosition(randint(10, 60), randint(40, 110))
 }
 
 let arbol : Sprite = null
@@ -58,5 +58,7 @@ nena = sprites.create(assets.image`
     nena-front
     `, SpriteKind.Player)
 controller.moveSprite(nena)
-//  Crear el primer árbol al iniciar
-crear_arbol_aleatorio()
+for (let arbol2 = 0; arbol2 < 6; arbol2++) {
+    //  Crear el primer árbol al iniciar
+    crear_arbol_aleatorio()
+}

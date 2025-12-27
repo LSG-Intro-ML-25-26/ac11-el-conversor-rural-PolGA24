@@ -66,7 +66,7 @@ def crear_arbol_aleatorio():
             treeSmallPine
             """),
         SpriteKind.Arbol)
-    arbol.set_position(randint(10, 70), randint(20, 100))
+    arbol.set_position(randint(10, 60), randint(40, 110))
 arbol: Sprite = None
 lenya_inventario = 0
 nena: Sprite = None
@@ -77,5 +77,6 @@ nena = sprites.create(assets.image("""
     nena-front
     """), SpriteKind.player)
 controller.move_sprite(nena)
-# Crear el primer árbol al iniciar
-crear_arbol_aleatorio()
+for arbol2 in range(6):
+    # Crear el primer árbol al iniciar
+    crear_arbol_aleatorio()
