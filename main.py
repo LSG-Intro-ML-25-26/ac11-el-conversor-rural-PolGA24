@@ -6,7 +6,19 @@ class SpriteKind:
     Cabra = SpriteKind.create()
     Huevo = SpriteKind.create()
     Caballo = SpriteKind.create()
-# Variables globales
+"""
+
+Variables globales
+
+"""
+
+def on_on_overlap(player2, vendedor):
+    vendedor.say("Gallina: 6kg (Pulsa A)", 500)
+sprites.on_overlap(SpriteKind.player, SpriteKind.Gallina, on_on_overlap)
+
+def on_on_overlap2(player22, vendedor2):
+    vendedor2.say("Patata: Ratio 1.33 (Pulsa A)", 500)
+sprites.on_overlap(SpriteKind.player, SpriteKind.Patata, on_on_overlap2)
 
 def on_down_pressed():
     animation.run_image_animation(nena,
@@ -17,16 +29,20 @@ def on_down_pressed():
         False)
 controller.down.on_event(ControllerButtonEvent.PRESSED, on_down_pressed)
 
+def on_on_overlap3(player23, vendedor3):
+    vendedor3.say("Cabra: 12kg (Pulsa A)", 500)
+sprites.on_overlap(SpriteKind.player, SpriteKind.Cabra, on_on_overlap3)
+
 # Evento de choque (Usando los tipos correctos)
 
-def on_on_overlap(player2, arbol_tocado):
+def on_on_overlap4(player24, arbol_tocado):
     global lenya_inventario
     # Efectos visuales
     arbol_tocado.start_effect(effects.fountain, 500)
     music.ba_ding.play()
     # Sumar inventario
     lenya_inventario += 1
-    player2.say("Leña: " + ("" + str(lenya_inventario)), 1000)
+    player24.say("Leña: " + ("" + str(lenya_inventario)), 1000)
     # Destruir y programar el renacimiento
     sprites.destroy(arbol_tocado)
     
@@ -35,7 +51,7 @@ def on_on_overlap(player2, arbol_tocado):
         crear_arbol_aleatorio()
     control.run_in_parallel(esperar_y_renacer)
     
-sprites.on_overlap(SpriteKind.player, SpriteKind.Arbol, on_on_overlap)
+sprites.on_overlap(SpriteKind.player, SpriteKind.Arbol, on_on_overlap4)
 
 def on_right_pressed():
     animation.run_image_animation(nena,
@@ -55,6 +71,14 @@ def on_left_pressed():
         False)
 controller.left.on_event(ControllerButtonEvent.PRESSED, on_left_pressed)
 
+def on_on_overlap5(player25, vendedor4):
+    vendedor4.say("Caballo: 12kg (Pulsa A)", 500)
+sprites.on_overlap(SpriteKind.player, SpriteKind.Caballo, on_on_overlap5)
+
+def on_on_overlap6(player26, vendedor5):
+    vendedor5.say("Huevo: 12kg (Pulsa A)", 500)
+sprites.on_overlap(SpriteKind.player, SpriteKind.Huevo, on_on_overlap6)
+
 def on_up_pressed():
     animation.run_image_animation(nena,
         assets.animation("""
@@ -71,31 +95,31 @@ def crear_mercado():
         pollo
         """), SpriteKind.Gallina)
     gallina.set_position(113, 73)
-    gallina.set_flag(SpriteFlag.GHOST, True)
+    gallina.set_flag(SpriteFlag.GHOST, False)
     # 2. Vendedor PATATA
     patata = sprites.create(assets.image("""
         patata
         """), SpriteKind.Patata)
     patata.set_position(106, 96)
-    patata.set_flag(SpriteFlag.GHOST, True)
+    patata.set_flag(SpriteFlag.GHOST, False)
     # 3. Vendedor CABRA
     cabra = sprites.create(assets.image("""
         cabra
         """), SpriteKind.Cabra)
     cabra.set_position(140, 60)
-    cabra.set_flag(SpriteFlag.GHOST, True)
+    cabra.set_flag(SpriteFlag.GHOST, False)
     # 4. Vendedor HUEVOS
     huevo = sprites.create(assets.image("""
         egg
         """), SpriteKind.Huevo)
     huevo.set_position(140, 80)
-    huevo.set_flag(SpriteFlag.GHOST, True)
+    huevo.set_flag(SpriteFlag.GHOST, False)
     # 5. Vendedor CABALLO
     caballo = sprites.create(assets.image("""
         caballo
         """), SpriteKind.Caballo)
     caballo.set_position(140, 100)
-    caballo.set_flag(SpriteFlag.GHOST, True)
+    caballo.set_flag(SpriteFlag.GHOST, False)
 def crear_arbol_aleatorio():
     global arbol
     arbol = sprites.create(assets.image("""
